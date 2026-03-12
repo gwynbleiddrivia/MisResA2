@@ -6,6 +6,7 @@ import MainSection from './MainSection'
 import Banner from './Banner'
 import ticketsData from './data/ticketsData'
 
+
 function App() {
   const [tickets, setTickets] = useState(ticketsData);
   return (

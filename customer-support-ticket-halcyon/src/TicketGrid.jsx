@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+
 
 export default function TicketGrid({tickets, setTickets}) {
-  
   const handleTicketClick = (id) => {
-    const newTickets = (prev) => prev.map(ticket=>ticket.id === id ? {...ticket, status: "In-Progress"} : ticket);
+    const newTickets = tickets.map(ticket=>ticket.id === id ? {...ticket, status: "In-Progress"} : ticket);
     setTickets(newTickets);
-    //console.log(tickets);
-  }
+    const ticket = tickets.find(ticket => ticket.id === id);
+    Swal.fire({
+      title: ticket? `"${ticket.title}" is In-Progress`:  "",
+      icon:"success"
+    });
 
+   
+  //console.log(tickets);
+  };
   return (
+    
     <>
     <div className="flex flex-col">
 
@@ -23,6 +31,8 @@ export default function TicketGrid({tickets, setTickets}) {
         }}>
           {title}
           </button>
+        
+
       ))}
     </div>
     </div>

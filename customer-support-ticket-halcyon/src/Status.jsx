@@ -1,12 +1,17 @@
 import React from 'react'
+import Swal from 'sweetalert2';
 
-
-export default function Status({tickets, setTickets, progressCounter, resolvedCounter,  setProgressCounter, setResolvedCounter}) {
+export default function Status({tickets, setTickets}) {
   
   const handleTaskClick = (id) => {
     const setTaskCompleted = (prev) => prev.map(ticket=>ticket.id === id ? {...ticket, status: "Completed"} : ticket);
     setTickets(setTaskCompleted);
     console.log(tickets);
+    const ticket = tickets.find(ticket => ticket.id === id);
+    Swal.fire({
+      title: ticket? `"${ticket.title}" is Resolved!`:  "",
+      icon:"success"
+    });
   }
 
   return (
