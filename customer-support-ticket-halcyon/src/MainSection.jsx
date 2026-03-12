@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
-import ticketsData from './data/ticketsData'
 import TicketGrid from './TicketGrid'
 import Status from './Status'
 
 
-export default function MainSection() {
+export default function MainSection({tickets, setTickets}) {
   return (
     <div className="flex justify-evenly w-full">
-        <TicketGrid/>
-        <Status/>
+        <TicketGrid 
+          tickets={tickets}
+          setTickets={setTickets}
+          />
+        <Status 
+          tickets={tickets} 
+          setTickets={setTickets}
+        />
     </div>
   )
 }

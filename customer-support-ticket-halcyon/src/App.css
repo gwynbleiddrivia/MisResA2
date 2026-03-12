@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@theme {
+    --color-customerviolet-first: #632EE3;
+    --color-customerviolet-last: #9F62F2;
+    --color-customergreen-first: #54CF68;
+    --color-customergreen-last: #00827A;
+}

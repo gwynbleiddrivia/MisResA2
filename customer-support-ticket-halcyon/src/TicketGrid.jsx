@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
-import ticketsData from './data/ticketsData'
- 
 
+export default function TicketGrid({tickets, setTickets}) {
+  
+  const handleTicketClick = (id) => {
+    const newTickets = (prev) => prev.map(ticket=>ticket.id === id ? {...ticket, status: "In-Progress"} : ticket);
+    setTickets(newTickets);
+    //console.log(tickets);
+  }
 
-export default function TicketGrid() {
   return (
     <>
     <div className="flex flex-col">
 
     <div>Customer Tickets</div>
     <div className="grid grid-cols-2 gap-5">
-      {ticketsData.filter(ticket => ticket.ticketGrid).map(({id, title})=>(
-        <button key={id} className="btn w-64 rounded-full">{title}</button>
+      {tickets.filter(ticket => ticket.status !== "Completed").map(({id, title, taskStatus})=>(
+        <button 
+          key={id} 
+          className="btn w-64 rounded-full"  
+          onClick={()=>{
+            handleTicketClick(id)
+        }}>
+          {title}
+          </button>
       ))}
     </div>
     </div>
