@@ -5,7 +5,7 @@ import Status from './Status'
 
 export default function MainSection({tickets, setTickets}) {
   return (
-    <div className="flex justify-evenly w-full">
+    <div className="flex justify-evenly w-full gap-10">
         <TicketGrid 
           tickets={tickets}
           setTickets={setTickets}
