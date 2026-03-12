@@ -7,14 +7,28 @@ export default function Banner({tickets, setTickets}) {
 
   return (
     <>
-      <div className="flex gap-2 items-center justify-between gap-5">
-        <div className="flex flex-col items-center text-white bg-linear-to-r from-customerviolet-first to-customerviolet-last p-10">
-           <p className="">In-Progress</p> 
-          <p className="">{progressTicketsLength}</p>
+      <div className="flex gap-3 w-full items-center justify-between">
+        <div className="bg-linear-to-r from-customerviolet-first to-customerviolet-last flex items-center justify-center w-full overflow-hidden">
+          <img src="./src/assets/vector1.png" className="" alt="" />
+          <div className="flex flex-col items-center text-white">
+
+            <p className="text-xl whitespace-nowrap">In-Progress</p> 
+            <p className="text-5xl font-bold">{progressTicketsLength}</p>
+          </div>
+          <img src="./src/assets/vector1.png" className="transform scale-x-[-1]" alt="" />
+
+           
         </div>
-        <div className="flex flex-col items-center text-white bg-linear-to-r from-customergreen-first to-customergreen-last p-10"> 
-          <p className="">Resolved</p>
-          <p className="">{resolvedTicketsLength}</p>
+        <div className="bg-linear-to-r from-customergreen-first to-customergreen-last flex items-center justify-center w-full overflow-hidden">
+          <img src="./src/assets/vector1.png" className="" alt="" />
+          
+          <div className="flex flex-col gap-3 items-center text-white">
+
+          <p className="text-xl">Resolved</p>
+          <p className="text-5xl font-bold">{resolvedTicketsLength}</p>
+
+          </div>
+          <img src="./src/assets/vector1.png" className="transform scale-x-[-1]" alt="" />
         </div>
 
       </div>
