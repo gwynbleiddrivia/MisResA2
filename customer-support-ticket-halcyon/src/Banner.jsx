@@ -7,7 +7,7 @@ export default function Banner({tickets, setTickets}) {
 
   return (
     <>
-      <div className="flex gap-3 w-full items-center justify-between">
+      <div className="flex flex-col md:flex-row  gap-3 w-full items-center justify-between mb-5">
         <div className="bg-linear-to-r from-customerviolet-first to-customerviolet-last flex items-center justify-center w-full overflow-hidden">
           <img src="./src/assets/vector1.png" className="" alt="" />
           <div className="flex flex-col items-center text-white">
